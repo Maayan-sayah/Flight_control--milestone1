@@ -64,7 +64,7 @@ public:
                     solution.push_back(temp);
                     temp = returnCameFromPoint(temp,closed);
                 }
-                return fromPointToStateList(solution,searcable);
+                return toSolution(fromPointToStateList(solution,searcable));
             }
             list<Problem*> successors = searcable->getAllPossibleState(n->getCurrentstate());
             for (Problem *s:successors) {
@@ -170,74 +170,33 @@ public:
         listOfState[listOfState.size()-1].setDirection(direction);
         return listOfState;
     }
+    string toSolution(vector<Problem> vec){
+        string solution="";
+        int i;
+        int x1=vec[vec.size()-1].getCurrentstate().first;
+        int y1=vec[vec.size()-1].getCurrentstate().second;
+        for (i=vec.size()-1;i!=-1;i--){
+            int x2=vec[i].getCurrentstate().first;
+            int y2=vec[i].getCurrentstate().second;
+            int dir=vec[i].getDirection();
+            if ((x1-x2)==1){
+                solution+="Left ("+to_string(dir)+") ,";
+            } else if((y1-y2)==1){
+                solution+="Up ("+to_string(dir)+") ,";
+            }
+            else if ((x2-x1)==1){
+                solution+="Right ("+to_string(dir)+") ,";
+            }
+            else if((y2-y1)==1){
+                solution+="Down ("+to_string(dir)+") ,";
+            }
+            x1=x2;
+            y1=y2;
+        }
+        solution+="\n";
+        return solution;
+    }
 };
 
 
-
-//string Search(searchable<Problem>* toSearch){
-//    list<Problem> open;
-//    std::map<point, Problem> costHash;
-//    list<Problem> backTraceList;
-//    Problem goal = toSearch->getGoalState();
-//
-//    int goalI = toSearch->getGoalState().getCurrentstate().first;
-//    int goalJ = toSearch->getGoalState().getCurrentstate().second;
-//
-//    open.push_back(toSearch->getInitialState());
-//    //open.push_back(toSearch->getInitialState());
-//    costHash.insert(pair<point, Problem>(toSearch->getInitialState().getCurrentstate(), toSearch->getInitialState()));
-//
-//    while(!open.empty()){
-//        Problem state = open.front();
-//        open.pop_front();
-//        double stateCost = costHash.find(state.getCurrentstate())->second.getCost();
-//        //this->nodesEvaluated++;
-//
-//        if(state==goal){
-//            //todo return back
-//            vector<point> p;
-//            int direction;
-//            printf("goal");
-////                while(state.getCameFrom()!=NULL){
-////
-////                }
-//            //return this->back->backTrace(state, toSearch, cost);
-//        }
-//
-//        list<Problem*> succerssors = toSearch->getAllPossibleState(&state);
-//
-//        while (!succerssors.empty()){
-//            Problem temp = *succerssors.front();
-//            succerssors.pop_front();
-//
-//            //string nameTemp = temp->getState();
-//            //char* divideTemp = const_cast<char *>(nameTemp.c_str());
-//            int tempI = temp.getCurrentstate().first;
-//            int tempJ = temp.getCurrentstate().second;
-//
-//            double h = abs(tempI - goalI) + abs(tempJ - goalJ);
-//            double g = temp.getCost() + stateCost;
-//            double newCost = h + g;
-//
-//            //int x= ;
-//            if(costHash.count(temp.getCurrentstate())){
-//                double preCost = costHash.find(temp.getCurrentstate())->second.getCost();
-//                if (newCost < preCost){
-//                    temp.setCameFrom(&state);
-//                    temp.setCost(newCost);
-//                    //temp->setDirection();
-//                    costHash.insert(pair<point, Problem>(temp.getCurrentstate(), temp));
-//                }
-//            }
-//            else {
-//                temp.setCameFrom(&state);
-//                temp.setCost(newCost);
-//                open.push_back(temp);
-//                costHash.insert(pair<point, Problem>(temp.getCurrentstate(), temp));
-//            }
-//        }
-//    }
-//    printf("No route found.");
-//    return "-1";
-//}
 #endif //MILESTONE2_ASTARALGORITHM_H

@@ -47,7 +47,7 @@ public:
                         solution.push_back(temp);
                         temp = returnCameFromPoint(temp,open);
                     }
-                    return fromPointToStateList(solution,searcable);
+                    return toSolution(fromPointToStateList(solution,searcable));
                 }
 
                 if (!(pointInQueue(*s,states))&&!(pointInVector(*s,open))){//not in queue and not in set
@@ -101,6 +101,32 @@ public:
             }
         }
         return false;
+    }
+    string toSolution(vector<Problem> vec){
+        string solution="";
+        int i;
+        int x1=vec[vec.size()-1].getCurrentstate().first;
+        int y1=vec[vec.size()-1].getCurrentstate().second;
+        for (i=vec.size()-1;i!=-1;i--){
+            int x2=vec[i].getCurrentstate().first;
+            int y2=vec[i].getCurrentstate().second;
+            int dir=vec[i].getDirection();
+            if ((x1-x2)==1){
+                solution+="Left ("+to_string(dir)+") ,";
+            } else if((y1-y2)==1){
+                solution+="Up ("+to_string(dir)+") ,";
+            }
+            else if ((x2-x1)==1){
+                solution+="Right ("+to_string(dir)+") ,";
+            }
+            else if((y2-y1)==1){
+                solution+="Down ("+to_string(dir)+") ,";
+            }
+            x1=x2;
+            y1=y2;
+        }
+        solution+="\n";
+        return solution;
     }
 };
 
