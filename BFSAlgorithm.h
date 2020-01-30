@@ -11,6 +11,7 @@
 using namespace std;
 template <typename Solution, typename  Problem>
 class BFSAlgorithm: public Searcher<Solution, Problem>{
+    int nodesEvaluated=0;
 public:
     Solution Search(searchable<Problem> *searcable) {
         point ptt={-1,-1};
@@ -24,7 +25,7 @@ public:
         queue<Problem *> states; //a priority queue of states to be evaluated
         vector<Problem> open; // a set of states already evaluated
         states.push(startState);
-
+        nodesEvaluated++;
         while (!states.empty()) {
             Problem* n = states.front();
             open.push_back(*n);
@@ -37,6 +38,7 @@ public:
                                                 searcable->getCost(s->getCurrentstate()) + n->getDirection());
 
                 if (n->getCurrentstate() == goal.getCurrentstate()) {
+                    nodesEvaluated++;
                     point temp = n->getCameFrom();
                     vector<point> solution;
                     solution.push_back(n->getCurrentstate());
@@ -49,6 +51,7 @@ public:
                 }
 
                 if (!(pointInQueue(*s,states))&&!(pointInVector(*s,open))){//not in queue and not in set
+                    nodesEvaluated++;
                     states.push(newState);
 
             }

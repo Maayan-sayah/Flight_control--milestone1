@@ -22,6 +22,7 @@ class BestAlgorithm :public Searcher<Problem,Solution> {
             return s1->getDirection()>s2->getDirection();
         }
     };
+    int nodesEvaluated=0;
 
 public:
     Solution Search(searchable<Problem>* searcable) {
@@ -36,6 +37,7 @@ public:
         priority_queue<Problem *, vector<Problem *>, CompareWayState> open; //a priority queue of states to be evaluated
         vector<Problem> closed; // a set of states already evaluated
         open.push(startState);
+        nodesEvaluated++;
         while (!open.empty()) {
             Problem *n = open.top();
             closed.push_back(*n);
@@ -52,6 +54,7 @@ public:
             } else {
                 list<Problem *> successors = searcable->getAllPossibleState(n->getCurrentstate());
                 for (Problem *s:successors) {
+
                     Problem *newState = new Problem(s->getCurrentstate(),
                                                     searcable->getCost(s->getCurrentstate()), n->getCurrentstate(),
                                                     searcable->getCost(s->getCurrentstate()) + n->getDirection());
@@ -59,6 +62,7 @@ public:
 
                     } else {
                         if (!(pointInQueue(*s, open))) {//not in queue and not in set
+                            nodesEvaluated++;
                             open.push(newState);
                         } else {
                             priority_queue<Problem *, vector<Problem *>, CompareWayState> tempOpen;

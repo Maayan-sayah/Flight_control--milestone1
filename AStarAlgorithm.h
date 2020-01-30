@@ -26,8 +26,7 @@ class AStarAlgorithm: public Searcher<Solution,Problem> {
             return s1->getDirection()>s2->getDirection();
         }
     };
-    int nodesEvaluated;
-    //BackTrace<point>* back;
+    int nodesEvaluated=0;
     double cost;
 
 public:
@@ -42,19 +41,7 @@ public:
         list<Problem*> closed;
         list<Problem*> open;
         open.push_back(startState);
-
-//        point ptt = {-1, -1};
-//        point *p = new point(searcable->getInitialState().getCurrentstate());
-//        Problem *startState = new Problem(*p);
-//        startState->setCost(searcable->getCost(*startState));
-//        startState->setDirection(searcable->getCost(*startState));
-//        Problem goal = searcable->getGoalState();
-//        goal.setCost(searcable->getCost(goal));
-//
-//        priority_queue<Problem *, vector<Problem *>, CompareWayState> open; //a priority queue of states to be evaluated
-//        vector<Problem> closed; // a set of states already evaluated
-//        open.push(startState);
-
+        nodesEvaluated++;
         while(!open.empty()){
             float bigestCost = INFINITY;
             Problem *n;
@@ -69,6 +56,7 @@ public:
             closed.push_back(n);
             open.remove(n);
             if (goal.getCurrentstate()==n->getCurrentstate()){
+                nodesEvaluated++;
                 point temp = n->getCameFrom();
                 vector<point> solution;
                 solution.push_back(n->getCurrentstate());
@@ -87,7 +75,7 @@ public:
                 s->setCost(s->getCost()+ searcable->getCost(s->getCurrentstate()));
 
                 if ((!inList(*s,open))||((inList(*s,open))&&(s->getCost()+s->getDirection()<n->getCost()))){
-
+                    nodesEvaluated++;
                     Problem *temp = new Problem(*n);
                     s->setCameFrom(temp->getCurrentstate());
                     s->setCost(n->getCost()+ s->getCost());
