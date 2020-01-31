@@ -3,23 +3,21 @@
 #include "cmake-build-debug/ClientHandler.h"
 #include "cmake-build-debug/ParallelServer.h"
 #include "cmake-build-debug/Searcher.h"
-#include "cmake-build-debug/BestAlgorithm.h"
+
 
 #include "cmake-build-debug/FileCachManager.h"
-#include "cmake-build-debug/objectAdapter.h"
+
 
 using namespace std;
-int main() {
-    int PORT=5400;
-    //MyTestClientHandler clientHandler();
+int main(int argc, char *argv[]) {
+    int PORT=stoi(argv[1]);
     Server_side::Server* server1= new ParallelServer;
-    Searcher<State<point>,string>* searcher=new BestAlgorithm<State<point>,string>;
-    ClientHandler<string>* clientHandler = new MyTestClientHandler(searcher);
+    CacheManager* cacheManager=new FileCachManager();
 
+    ClientHandler<string>* clientHandler = new MyTestClientHandler(cacheManager);
     int  i=server1->openServer(PORT,clientHandler);
 
     while (true){
         this_thread::sleep_for(chrono::minutes(1));
     }
-    return 0;
 }
