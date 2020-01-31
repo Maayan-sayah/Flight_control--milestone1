@@ -61,8 +61,11 @@ public:
                     if ((n->getCameFrom() != ptt) && (n->getCameFrom() == s->getCurrentstate())) {
 
                     } else {
-                        if (!(pointInQueue(*s, open))) {//not in queue and not in set
-                            nodesEvaluated++;
+                        if (!(pointInQueue(*s, open))) {//not in queue
+                            if (!pointInVector(*s,closed)){
+                                nodesEvaluated++;
+                            }
+
                             open.push(newState);
                         } else {
                             priority_queue<Problem *, vector<Problem *>, CompareWayState> tempOpen;
@@ -71,6 +74,7 @@ public:
                                 temp = open.top();
                                 open.pop();
                                 if (temp->getCurrentstate() == s->getCurrentstate()) {
+
                                     if((temp->getDirection()>newState->getDirection())){
                                         temp->setCost(s->getDirection());
                                         point camefrom = s->getCameFrom();
@@ -110,11 +114,10 @@ public:
         int direction=0;
         for (point t:vec) {
             Problem newS=Problem(t);
-            newS.setCost(searcable->getCost(newS));
-
-            listOfState.push_back(newS);
+            newS.setCost(searcable->getCost(t));
             direction+=newS.getCost();
             newS.setDirection(direction);
+            listOfState.push_back(newS);
         }
         return listOfState;
     }
@@ -154,10 +157,11 @@ public:
         int i;
         int x1=vec[vec.size()-1].getCurrentstate().first;
         int y1=vec[vec.size()-1].getCurrentstate().second;
+        int dir=0;
         for (i=vec.size()-1;i!=-1;i--){
             int x2=vec[i].getCurrentstate().first;
             int y2=vec[i].getCurrentstate().second;
-            int dir=vec[i].getDirection();
+            dir+=vec[i].getCost();
             if ((x1-x2)==1){
                 solution+="Left ("+to_string(dir)+") ,";
             } else if((y1-y2)==1){
@@ -172,7 +176,7 @@ public:
             x1=x2;
             y1=y2;
         }
-        solution+="\n";
+        solution+="\n"+to_string(nodesEvaluated)+"\n";
         return solution;
     }
 };

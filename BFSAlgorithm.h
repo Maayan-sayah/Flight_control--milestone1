@@ -9,8 +9,8 @@
 #include "Searcher.h"
 #include "BestAlgorithm.h"
 using namespace std;
-template <typename Solution, typename  Problem>
-class BFSAlgorithm: public Searcher<Solution, Problem>{
+template <typename  Problem,typename Solution>
+class BFSAlgorithm: public Searcher<Problem,Solution>{
     int nodesEvaluated=0;
 public:
     Solution Search(searchable<Problem> *searcable) {
@@ -64,11 +64,11 @@ public:
         int direction=0;
         for (point t:vec) {
             Problem newS=Problem(t);
+            newS.setCost(searcable->getCost(t));
+            direction+=newS.getCost();
+            newS.setDirection(direction);
             listOfState.push_back(newS);
-            direction+=searcable->getCost(newS);
         }
-        int size=listOfState.size();
-        listOfState[listOfState.size()-1].setDirection(direction);
         return listOfState;
     }
 
@@ -107,10 +107,11 @@ public:
         int i;
         int x1=vec[vec.size()-1].getCurrentstate().first;
         int y1=vec[vec.size()-1].getCurrentstate().second;
+        int dir=0;
         for (i=vec.size()-1;i!=-1;i--){
             int x2=vec[i].getCurrentstate().first;
             int y2=vec[i].getCurrentstate().second;
-            int dir=vec[i].getDirection();
+            dir+=vec[i].getCost();
             if ((x1-x2)==1){
                 solution+="Left ("+to_string(dir)+") ,";
             } else if((y1-y2)==1){
@@ -125,7 +126,7 @@ public:
             x1=x2;
             y1=y2;
         }
-        solution+="\n";
+        solution+="\n"+to_string(nodesEvaluated)+"\n";
         return solution;
     }
 };

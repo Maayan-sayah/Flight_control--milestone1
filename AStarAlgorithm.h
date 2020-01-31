@@ -18,9 +18,9 @@
 #include "point.h"
 using namespace std;
 
-template <typename Solution, typename  Problem>
+template <typename  Problem, typename Solution >
 
-class AStarAlgorithm: public Searcher<Solution,Problem> {
+class AStarAlgorithm: public Searcher<Problem,Solution> {
     struct CompareWayState {
         bool operator()(Problem *const &s1, Problem *const &s2) {
             return s1->getDirection()>s2->getDirection();
@@ -82,6 +82,7 @@ public:
                     s->setDirection(abs((goal.getCurrentstate().first - s->getCurrentstate().first) * searcable->getAvg()) +
                     abs((goal.getCurrentstate().second -  s->getCurrentstate().second) * searcable->getAvg()));
                     if ((inList(*s, open))) {
+                        nodesEvaluated--;
                         open.remove(s);
                     }
                     open.push_back(s);
@@ -110,11 +111,11 @@ public:
         int direction=0;
         for (point t:vec) {
             Problem newS=Problem(t);
+            newS.setCost(searcable->getCost(t));
+            direction+=newS.getCost();
+            newS.setDirection(direction);
             listOfState.push_back(newS);
-            direction+=searcable->getCost(newS);
         }
-        int size=listOfState.size();
-        listOfState[listOfState.size()-1].setDirection(direction);
         return listOfState;
     }
 
@@ -157,28 +158,17 @@ public:
         }
         return {-1, -1};
     }
-    vector<Problem> fromPointToStateList(list<point> vec, searchable<Problem> *searcable){
-        vector<Problem> listOfState;
-        int direction=0;
-        for (point t:vec) {
-            Problem newS=Problem(t);
-            newS.setCost(searcable->getCost(newS));
-            listOfState.push_back(newS);
-            direction+=newS.getCost();
-        }
-        int size=listOfState.size();
-        listOfState[listOfState.size()-1].setDirection(direction);
-        return listOfState;
-    }
+
     string toSolution(vector<Problem> vec){
         string solution="";
         int i;
         int x1=vec[vec.size()-1].getCurrentstate().first;
         int y1=vec[vec.size()-1].getCurrentstate().second;
+        int dir=0;
         for (i=vec.size()-1;i!=-1;i--){
             int x2=vec[i].getCurrentstate().first;
             int y2=vec[i].getCurrentstate().second;
-            int dir=vec[i].getDirection();
+            dir+=vec[i].getCost();
             if ((x1-x2)==1){
                 solution+="Left ("+to_string(dir)+") ,";
             } else if((y1-y2)==1){
@@ -193,7 +183,7 @@ public:
             x1=x2;
             y1=y2;
         }
-        solution+="\n";
+        solution+="\n"+to_string(nodesEvaluated)+"\n";
         return solution;
     }
 };
