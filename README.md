@@ -19,12 +19,15 @@ in addition, i use a cache to store every solution in file database.
 in order to run the program, run this command in the terminal:
 
 **</u>g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o a.out -pthread</u>**
+
 our program requires an available port here is how to execute the program with a recommended port:
 
 **</u>./a.out 5400</u>**
+
 Open terminal and enter the following command :
 
 **</u>telnet localhost 5400</u>**
+
 Enter the matrix ,enter the start point and destination point in two different lines.
 
 Enter "end" when you finished and wait for answer from the server.
