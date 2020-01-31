@@ -20,7 +20,7 @@ matrix::matrix(vector<string> stringvector,string startindex,string goalindex) {
         vector<int> rowvector;
         string temp=*it;
 
-        temp=temp.substr(0,temp.length()-2);
+        temp=temp.substr(0,temp.length()-1);
         for (i=0;i<temp.length();i++){
             while ((temp[i]!=',')&&(i<temp.length())){
                 if (temp[i]!=' '){

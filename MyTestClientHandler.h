@@ -15,16 +15,16 @@ using namespace std;
 
 //template <typename  Problem,typename Solution,typename T>
 class MyTestClientHandler: public ClientHandler<string>{
-
-    Solver *solverOA;
     CacheManager* cacheManager;
+    Solver *solverOA;
+
 
 public:
     void handleClient(int socket);
-
+    CacheManager* getCach();
     //MyTestClientHandler(CacheManager<T> *cm1, Solver<Problem,Solution>* solver1 );
 
-    MyTestClientHandler(Searcher<State<point>,string>* searcher);
+    MyTestClientHandler(CacheManager* cacheManager);
 };
 
 

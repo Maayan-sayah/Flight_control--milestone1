@@ -6,6 +6,11 @@
 #include "searchable.h"
 #include "matrix.h"
 #include "BFSAlgorithm.h"
+#include "AStarAlgorithm.h"
+#include <thread>
+#include <queue>
+#include <deque>
+#include <mutex>
 
 ParallelServer::ParallelServer(){
     this->run=false;
@@ -43,7 +48,7 @@ int ParallelServer::openServer(int port, ClientHandler<string>* clientHandler){
     }
     this->setrun(true);
 
-    //this->_thread = new thread(getClient,socketfd,address,this);
+
     this->_thread=new thread(getClient,socketfd,address,this,clientHandler);
 
     return 1;
@@ -68,7 +73,6 @@ void readFromClient( ClientHandler<string>* myClient,int client_socket,int socke
 void getClient(int socketfd,sockaddr_in address,ParallelServer* server,ClientHandler<string>* clientHandler){
     while (server->run) {
         //making socket listen to the port
-        //todo time out
         if (listen(socketfd, 5) == -1) { //can also set to SOMAXCON (max connections)
             std::cerr << "Error during listening command" << std::endl;
         } else {
@@ -83,8 +87,10 @@ void getClient(int socketfd,sockaddr_in address,ParallelServer* server,ClientHan
             std::cerr << "Error accepting client" << std::endl;
         }
         else{
-            //std::cout <<"client "+server->threadsList.size()<<" connected";
-            server->threadsList.push_back(new thread(readFromClient,clientHandler, client_socket, socketfd,server));
+            std::cout <<"client "+to_string(server->threadsList.size()+1)+" connected\n";
+
+            ClientHandler<string>* tempClienthandler =new MyTestClientHandler(clientHandler->getCach());
+            server->threadsList.push_back(new thread(readFromClient,tempClienthandler, client_socket, socketfd,server));
         }
 
     }
