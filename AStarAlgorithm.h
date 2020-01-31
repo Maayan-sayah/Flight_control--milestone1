@@ -27,7 +27,6 @@ class AStarAlgorithm: public Searcher<Problem,Solution> {
         }
     };
     int nodesEvaluated=0;
-    double cost;
 
 public:
     Solution Search(searchable<Problem> *searcable){
@@ -128,36 +127,6 @@ public:
         return false;
     }
 
-    bool pointInQueue(Problem p, priority_queue<Problem *, vector<Problem *>, CompareWayState> queue) {
-        priority_queue<Problem> newqueue;
-        while (!queue.empty()) {
-            Problem *s = queue.top();
-            newqueue.push(*s);
-            queue.pop();
-            if (s->getCurrentstate() == p.getCurrentstate()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    bool pointInVector(Problem p, vector<Problem*> vec) {
-        for (Problem t:vec) {
-            if (t.getCurrentstate() == p.getCurrentstate()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    point returnCameFromPoint(point find, vector<Problem> vec) {
-        for (Problem t:vec) {
-            if (t.getCurrentstate() == find) {
-                return t.getCameFrom();
-            }
-        }
-        return {-1, -1};
-    }
 
     string toSolution(vector<Problem> vec){
         string solution="";

@@ -8,7 +8,6 @@
 
 
 #include "MyTestClientHandler.h"
-#include "BFSAlgorithm.h"
 #include "Solver.h"
 #include "FileCachManager.h"
 #include "objectAdapter.h"
@@ -16,27 +15,26 @@
 #include "ParallelServer.h"
 #include "searchable.h"
 #include "matrix.h"
-#include "BFSAlgorithm.h"
+
 #include "AStarAlgorithm.h"
 
 using namespace std;
 
-string PORT="5400";
+
 class NotSeccsedAccept: public exception{
 
 };
 
-//template<typename Problem, typename Solution, typename T>
+
 MyTestClientHandler::MyTestClientHandler(CacheManager* cacheManager){
     this->cacheManager =cacheManager;
-    this->solverOA = new objectAdapter<State<point>,string>(new BFSAlgorithm<State<point>,string>());
+    this->solverOA = new objectAdapter<State<point>,string>(new AStarAlgorithm<State<point>,string>());
 }
 
 CacheManager* MyTestClientHandler:: getCach(){
     return this->cacheManager;
 }
 
-//template <typename  Problem,typename Solution,typename T>
 void MyTestClientHandler::handleClient(int socket) {
     mutex mutex1;
     vector<string> vectorOfString;
@@ -71,47 +69,6 @@ void MyTestClientHandler::handleClient(int socket) {
         }
 
     }
-//    vector<string> vectorOfString;
-//    string findinCache="";
-//    char buffer[1024] = {0};
-//    int valread = read(socket, buffer, 1024);
-//    while (strcmp(buffer,"end\r\n")!=0){
-//        vectorOfString.push_back(buffer);
-//        findinCache+=buffer;
-//        memset(buffer,0,1024);
-//        int valread = read(socket, buffer, 1024);
-//    }
-
-//    char* buffer[2000] = {0};
-//    int valread = read(socket, buffer, 2000);
-//    string strbuffer;
-//
-//
-//    //char token[1024]={0};
-//    char* token=strtok(buffer, "\n");
-//    while (strcmp(token,"end\r")!=0){
-//        //strcpy(token,strbuffer.c_str());
-//        string temp=token;
-//        vectorOfString.push_back(temp);
-//        findinCache+=strbuffer;
-//        token=strtok(NULL, "\n");
-//    }
-
-//
-//    vector<string> vectorOfString;
-//    char* buffer;
-//   while(true){
-//       read(socket, buffer,3000);
-//       string line(buffer);
-//       memset(buffer,0,3000);
-//       if (!strcmp(line.c_str(), "end\r\n")) {
-//           //GlobalShouldStop = true;
-//           break;
-//       }
-//       vectorOfString.push_back(line);
-//       findinCache+=line;
-//   }
-
 
     string ans;
 
@@ -143,9 +100,6 @@ void MyTestClientHandler::handleClient(int socket) {
     } else {
         std::cout<<"message sent to server" <<std::endl;
     }
-//    close(socket);
-    //server->setrun(false);
-
 }
 
 

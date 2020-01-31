@@ -13,7 +13,6 @@
 
 using namespace std;
 
-//template <typename  Problem,typename Solution,typename T>
 class MyTestClientHandler: public ClientHandler<string>{
     CacheManager* cacheManager;
     Solver *solverOA;
@@ -22,8 +21,6 @@ class MyTestClientHandler: public ClientHandler<string>{
 public:
     void handleClient(int socket);
     CacheManager* getCach();
-    //MyTestClientHandler(CacheManager<T> *cm1, Solver<Problem,Solution>* solver1 );
-
     MyTestClientHandler(CacheManager* cacheManager);
 };
 
