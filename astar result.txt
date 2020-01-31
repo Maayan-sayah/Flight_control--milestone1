@@ -1,0 +1,40 @@
+client 1 received:
+Down (15) ,Down (17) ,Down (22) ,Down (26) ,Down (30) ,Right (34) ,Down (39) ,Right (40) ,Right (50) ,Down (65) ,Right (65) ,Right (67) ,Right (87) ,Right (90) ,Right (90) ,Right (103) ,Down (118) ,Down (123) ,
+75
+
+client 2 received:
+Right (33) ,Right (38) ,Down (44) ,Down (58) ,Right (58) ,Right (58) ,Down (63) ,Right (73) ,Right (74) ,Right (78) ,Right (79) ,Down (83) ,Down (94) ,Down (99) ,Down (110) ,Right (112) ,Down (118) ,Down (133) ,Down (137) ,Right (143) ,Down (154) ,Down (160) ,Right (163) ,Right (163) ,Down (163) ,Right (177) ,Right (182) ,Down (189) ,
+139
+
+client 3 received:
+Right (7) ,Right (16) ,Down (18) ,Down (23) ,Down (34) ,Down (40) ,Down (51) ,Down (55) ,Right (62) ,Down (78) ,Down (78) ,Down (88) ,Down (96) ,Right (98) ,Down (99) ,Down (117) ,Down (117) ,Right (117) ,Right (125) ,Down (128) ,Right (135) ,Down (140) ,Right (140) ,Right (141) ,Right (161) ,Down (165) ,Right (167) ,Down (180) ,Right (185) ,Right (187) ,Right (196) ,Right (203) ,Down (205) ,Down (210) ,Right (213) ,Right (214) ,Right (229) ,Right (244) ,
+359
+
+client 4 received:
+Down (20) ,Down (25) ,Down (31) ,Right (31) ,Down (33) ,Down (33) ,Down (39) ,Right (57) ,Right (59) ,Down (76) ,Down (76) ,Down (77) ,Right (79) ,Right (82) ,Right (87) ,Right (93) ,Right (101) ,Right (102) ,Right (103) ,Right (109) ,Down (112) ,Right (132) ,Right (136) ,Right (137) ,Down (139) ,Right (152) ,Down (160) ,Right (162) ,Right (162) ,Down (163) ,Down (164) ,Down (164) ,Right (181) ,Right (182) ,Right (191) ,Right (203) ,Right (208) ,Right (208) ,Down (222) ,Down (226) ,Down (231) ,Down (231) ,Down (236) ,Right (246) ,Down (248) ,Down (252) ,Down (252) ,Down (255) ,
+273
+
+client 5 received:
+Down (14) ,Down (19) ,Right (25) ,Right (30) ,Right (30) ,Down (37) ,Down (38) ,Right (39) ,Right (41) ,Right (42) ,Down (52) ,Down (54) ,Down (56) ,Right (57) ,Right (60) ,Down (60) ,Down (60) ,Down (79) ,Down (90) ,Down (96) ,Down (98) ,Down (110) ,Down (117) ,Down (120) ,Right (120) ,Down (124) ,Down (127) ,Right (134) ,Right (134) ,Right (139) ,Right (141) ,Right (150) ,Down (161) ,Right (175) ,Down (181) ,Down (185) ,Right (189) ,Down (191) ,Right (195) ,Right (206) ,Down (207) ,Down (207) ,Right (211) ,Right (211) ,Right (217) ,Right (221) ,Right (222) ,Right (224) ,Right (230) ,Right (245) ,Right (253) ,Right (253) ,Down (263) ,Down (273) ,Right (276) ,Down (287) ,Down (288) ,Down (295) ,
+307
+
+client 6 received:
+Right (2) ,Down (4) ,Down (12) ,Down (29) ,Right (30) ,Right (42) ,Right (55) ,Right (55) ,Down (59) ,Right (62) ,Right (69) ,Down (69) ,Down (80) ,Down (94) ,Down (101) ,Down (101) ,Right (108) ,Right (114) ,Down (117) ,Down (121) ,Right (127) ,Right (133) ,Right (133) ,Right (141) ,Right (143) ,Down (145) ,Down (152) ,Right (166) ,Down (172) ,Right (176) ,Down (189) ,Down (196) ,Down (198) ,Right (201) ,Right (212) ,Right (212) ,Down (216) ,Down (216) ,Down (216) ,Right (222) ,Down (230) ,Right (233) ,Right (237) ,Down (239) ,Down (244) ,Down (244) ,Down (259) ,Down (275) ,Down (283) ,Down (285) ,Down (290) ,Right (295) ,Right (306) ,Right (309) ,Down (310) ,Down (314) ,Right (319) ,Right (321) ,Down (327) ,Right (330) ,Down (336) ,Right (336) ,Right (353) ,Right (354) ,Down (358) ,Right (362) ,Right (366) ,Right (377) ,
+448
+
+client 7 received:
+Down (11) ,Right (29) ,Down (42) ,Down (47) ,Down (51) ,Down (53) ,Down (69) ,Down (78) ,Down (82) ,Right (84) ,Down (96) ,Right (99) ,Right (99) ,Right (104) ,Right (120) ,Right (122) ,Right (129) ,Right (132) ,Right (140) ,Down (141) ,Down (145) ,Right (145) ,Down (154) ,Right (155) ,Down (158) ,Right (160) ,Right (166) ,Down (180) ,Down (195) ,Down (201) ,Right (202) ,Down (209) ,Down (211) ,Down (215) ,Right (221) ,Right (223) ,Right (226) ,Right (235) ,Right (239) ,Right (251) ,Down (263) ,Right (270) ,Right (272) ,Right (273) ,Right (277) ,Right (294) ,Right (303) ,Right (303) ,Down (304) ,Down (309) ,Down (310) ,Right (310) ,Right (311) ,Down (311) ,Down (318) ,Right (321) ,Down (328) ,Down (329) ,Right (331) ,Down (332) ,Down (343) ,Down (355) ,Down (355) ,Right (355) ,Down (359) ,Right (366) ,Right (378) ,Down (384) ,Down (387) ,Down (389) ,Right (405) ,Right (405) ,Right (406) ,Down (408) ,Right (417) ,Down (418) ,Down (432) ,Down (432) ,
+658
+
+client 8 received:
+Down (33) ,Down (51) ,Down (70) ,Down (81) ,Down (89) ,Down (100) ,Down (107) ,Down (109) ,Down (114) ,Down (115) ,Down (115) ,Right (122) ,Right (124) ,Down (124) ,Right (135) ,Right (148) ,Right (148) ,Down (154) ,Right (161) ,Right (163) ,Down (167) ,Right (180) ,Right (185) ,Right (187) ,Right (194) ,Down (197) ,Right (197) ,Down (201) ,Right (211) ,Right (222) ,Right (235) ,Right (241) ,Down (257) ,Right (257) ,Down (264) ,Down (266) ,Down (268) ,Down (273) ,Down (275) ,Down (284) ,Right (288) ,Right (292) ,Down (292) ,Right (297) ,Right (309) ,Right (314) ,Right (329) ,Right (332) ,Down (334) ,Down (349) ,Down (349) ,Right (359) ,Down (359) ,Right (365) ,Right (369) ,Right (370) ,Right (370) ,Down (375) ,Down (376) ,Right (385) ,Down (393) ,Right (394) ,Right (398) ,Right (402) ,Down (405) ,Down (407) ,Right (412) ,Down (412) ,Down (416) ,Down (416) ,Right (420) ,Right (424) ,Right (434) ,Down (434) ,Right (436) ,Right (450) ,Right (456) ,Right (460) ,Down (465) ,Down (477) ,Right (477) ,Down (489) ,Right (500) ,Right (500) ,Down (500) ,Down (511) ,Down (516) ,Down (516) ,
+1295
+
+client 9 received:
+Down (10) ,Right (11) ,Down (20) ,Right (25) ,Down (29) ,Right (38) ,Down (49) ,Down (64) ,Right (67) ,Down (67) ,Right (79) ,Right (91) ,Right (92) ,Down (97) ,Right (106) ,Down (110) ,Right (121) ,Down (124) ,Down (129) ,Down (137) ,Down (138) ,Down (138) ,Down (149) ,Down (149) ,Down (154) ,Right (154) ,Down (156) ,Right (168) ,Down (172) ,Down (172) ,Right (182) ,Right (182) ,Down (185) ,Down (188) ,Right (201) ,Right (204) ,Right (204) ,Right (207) ,Right (223) ,Right (231) ,Right (232) ,Right (236) ,Right (236) ,Right (241) ,Down (257) ,Down (257) ,Right (263) ,Right (274) ,Right (279) ,Down (279) ,Right (279) ,Right (279) ,Down (299) ,Down (304) ,Down (305) ,Down (305) ,Down (322) ,Down (324) ,Right (334) ,Right (334) ,Right (337) ,Down (338) ,Down (343) ,Down (346) ,Right (355) ,Right (355) ,Down (356) ,Down (356) ,Down (361) ,Down (370) ,Down (377) ,Down (385) ,Down (390) ,Down (392) ,Down (392) ,Down (392) ,Right (394) ,Right (408) ,Down (414) ,Down (420) ,Right (427) ,Right (436) ,Down (438) ,Right (438) ,Down (444) ,Right (450) ,Right (456) ,Right (456) ,Right (470) ,Right (472) ,Up (482) ,Right (483) ,Right (487) ,Right (488) ,Right (505) ,Down (517) ,
+1364
+
+client 10 received:
+Right (10) ,Right (25) ,Right (25) ,Right (28) ,Right (45) ,Right (58) ,Down (60) ,Right (70) ,Down (72) ,Right (74) ,Down (83) ,Down (89) ,Down (90) ,Right (93) ,Right (98) ,Down (103) ,Right (107) ,Down (111) ,Right (112) ,Right (127) ,Right (136) ,Down (140) ,Down (144) ,Down (145) ,Down (161) ,Down (170) ,Down (172) ,Down (175) ,Right (176) ,Right (178) ,Right (186) ,Right (191) ,Down (192) ,Down (209) ,Right (214) ,Right (219) ,Right (224) ,Down (229) ,Right (230) ,Down (234) ,Right (247) ,Down (248) ,Right (249) ,Right (263) ,Down (272) ,Down (274) ,Down (276) ,Down (280) ,Down (282) ,Right (290) ,Down (292) ,Down (307) ,Down (307) ,Down (307) ,Down (311) ,Down (313) ,Right (332) ,Right (344) ,Right (346) ,Right (350) ,Right (357) ,Right (365) ,Right (365) ,Down (367) ,Right (368) ,Right (380) ,Right (382) ,Down (382) ,Down (390) ,Down (394) ,Down (397) ,Down (399) ,Right (403) ,Down (409) ,Down (409) ,Down (425) ,Left (425) ,Down (430) ,Down (431) ,Down (441) ,Down (442) ,Right (447) ,Right (449) ,Down (449) ,Down (449) ,Down (456) ,Down (458) ,Down (458) ,Right (470) ,Right (471) ,Right (472) ,Right (476) ,Up (476) ,Right (483) ,Right (485) ,Right (485) ,Right (486) ,Right (492) ,Right (498) ,Down (508) ,Right (512) ,Down (515) ,
+971
+
