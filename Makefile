@@ -204,33 +204,6 @@ SerialServer.cpp.s:
 	$(MAKE) -f CMakeFiles/milestone2.dir/build.make CMakeFiles/milestone2.dir/SerialServer.cpp.s
 .PHONY : SerialServer.cpp.s
 
-Solver.o: Solver.cpp.o
-
-.PHONY : Solver.o
-
-# target to build an object file
-Solver.cpp.o:
-	$(MAKE) -f CMakeFiles/milestone2.dir/build.make CMakeFiles/milestone2.dir/Solver.cpp.o
-.PHONY : Solver.cpp.o
-
-Solver.i: Solver.cpp.i
-
-.PHONY : Solver.i
-
-# target to preprocess a source file
-Solver.cpp.i:
-	$(MAKE) -f CMakeFiles/milestone2.dir/build.make CMakeFiles/milestone2.dir/Solver.cpp.i
-.PHONY : Solver.cpp.i
-
-Solver.s: Solver.cpp.s
-
-.PHONY : Solver.s
-
-# target to generate assembly for a file
-Solver.cpp.s:
-	$(MAKE) -f CMakeFiles/milestone2.dir/build.make CMakeFiles/milestone2.dir/Solver.cpp.s
-.PHONY : Solver.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -303,9 +276,6 @@ help:
 	@echo "... SerialServer.o"
 	@echo "... SerialServer.i"
 	@echo "... SerialServer.s"
-	@echo "... Solver.o"
-	@echo "... Solver.i"
-	@echo "... Solver.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

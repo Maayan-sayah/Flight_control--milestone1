@@ -8,15 +8,18 @@
 #include <string>
 #include <vector>
 #include "searchable.h"
+#include "CacheManager.h"
 
 using namespace std;
 template <typename T>
 class ClientHandler {
 
     public:
-        //ClientHandler();
-        virtual void handleClient(int socket)=0;
-    //~ClientHandler();
+    virtual CacheManager* getCach()=0;
+    virtual void handleClient(int socket)=0;
+    virtual ~ClientHandler(){
+
+    }
 };
 
 

@@ -27,6 +27,10 @@ public:
     virtual void foreach(const function<void(string &)> func)=0;
     virtual bool inCachManager(string key,string obj)=0;
 
+    virtual ~CacheManager() {
+
+    }
+
 };
 
 

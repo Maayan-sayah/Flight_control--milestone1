@@ -13,6 +13,10 @@ namespace Server_side{
     public:
         virtual int openServer(int port, ClientHandler<string>* clientHandler)=0;
         virtual int closeServer(int socketfd)=0;
+
+        virtual ~Server() {
+
+        }
     };
 }
 

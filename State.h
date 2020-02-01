@@ -9,7 +9,7 @@ template <typename T>
 class State {
 private:
     T currentstate; // todo change to T* (cause now it's calling T's constructor - which may or may not exist)
-    double cost=0;
+    int cost=0;
     T cameFrom={-1,-1};
     int direction=0;
 public:
@@ -53,13 +53,13 @@ public:
         this->currentstate=s;
     }
 
-    void setCost(int cost) {
-        State::cost = cost;
+    void setCost(int newcost) {
+        this->cost = newcost;
     }
 
 
-    void setDirection(int direction) {
-        State::direction = direction;
+    void setDirection(int newdirection) {
+        this->direction = newdirection;
     }
 
     int getDirection() const {
@@ -77,8 +77,8 @@ public:
     T getCameFrom() {
         return cameFrom;
     }
-    void setCameFrom(T cameFrom) {
-        State::cameFrom = cameFrom;
+    void setCameFrom(T newcameFrom) {
+        State::cameFrom = newcameFrom;
     }
 };
 

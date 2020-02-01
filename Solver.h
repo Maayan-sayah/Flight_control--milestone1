@@ -12,6 +12,10 @@ using namespace std;
 class Solver {
 public:
     virtual string solve(searchable<State<point>>* problem)=0;
+
+    virtual ~Solver() {
+
+    }
 };
 
 #endif //MILESTONE2_SOLVER_H

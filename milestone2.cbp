@@ -126,9 +126,6 @@
 		<Unit filename="/home/maayan/CLionProjects/milestone2/cmake-build-debug/Server.h">
 			<Option target="milestone2"/>
 		</Unit>
-		<Unit filename="/home/maayan/CLionProjects/milestone2/cmake-build-debug/Solver.cpp">
-			<Option target="milestone2"/>
-		</Unit>
 		<Unit filename="/home/maayan/CLionProjects/milestone2/cmake-build-debug/Solver.h">
 			<Option target="milestone2"/>
 		</Unit>
