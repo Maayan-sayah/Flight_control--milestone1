@@ -11,7 +11,7 @@
 using namespace std;
 int main(int argc, char *argv[]) {
     int PORT=stoi(argv[1]);
-    Server_side::Server* server1= new ParallelServer;
+    Server_side::Server* server1= new ParallelServer();
     CacheManager* cacheManager=new FileCachManager();
 
     ClientHandler<string>* clientHandler = new MyTestClientHandler(cacheManager);
@@ -20,4 +20,5 @@ int main(int argc, char *argv[]) {
     while (true){
         this_thread::sleep_for(chrono::minutes(1));
     }
+    return i;
 }
