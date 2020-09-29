@@ -1,19 +1,23 @@
 ## ***milestone 2***
 
 **<u>Description:</u>**
+In computer science, we use searche algorithms to search element or retrieve an element from any data structure. Searching is a basic operation in Software Development and therefor efforts have been made to develop efficient algorithms for this.
 
-This program revolves around the server client structure. in general, i write a code that will solve a search problem. 
-in this project the client will send n*n matrix, start point and destination point and the server will return the solution of this problem. 
+This program revolves around the server-client structure and in general, the code that I wrote will solve a search problem. 
 
+The client will send: 
+ n*n matrix
+start point 
+destination point 
+The server will return: solution of this problem- the solution will be the shorteset route between the points.
 
-in this problem i use 3 algorithms: 
-BFS, BestFirst search and A star. 
-
-i test this algorithms with 10 diffrent matrix, and i understood that a star is the algorithm that return the fastest and the cheapesst way solution.
+To resolve this is problem I use 3 algorithms: BFS, BestFirst search and A star.
+I were test this algorithms with 10 diffrent matrix. the result was:
 
 ![Capture](https://user-images.githubusercontent.com/60346583/94564495-b6b77080-0270-11eb-85d3-ea241bc644be.PNG)
 
 
+according to the result of the following graphs, a star is the algorithm that return the fastest and the cheapesst way solution. so the program use this algorithm, but it's modifiable.
 in addition, i use a cache to store every solution in file database. 
 
 
