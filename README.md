@@ -11,6 +11,9 @@ BFS, BestFirst search and A star.
 
 i test this algorithms with 10 diffrent matrix, and i understood that a star is the algorithm that return the fastest and the cheapesst way solution.
 
+![Capture](https://user-images.githubusercontent.com/60346583/94564495-b6b77080-0270-11eb-85d3-ea241bc644be.PNG)
+
+
 in addition, i use a cache to store every solution in file database. 
 
 
