@@ -1,7 +1,7 @@
 ## ***milestone 2***
 
 **<u>Description:</u>**
-In computer science, we use searche algorithms to search element or retrieve an element from any data structure. Searching is a basic operation in Software Development and therefor efforts have been made to develop efficient algorithms for this.
+In computer science, a search algorithm is any algorithm which is used to search requested information within a data structure. Searching is a basic operation in Software Development and therefor efforts have been made to develop efficient algorithms for this.
 
 This program revolves around the server-client structure and in general, the code that I wrote will solve a search problem. 
 
