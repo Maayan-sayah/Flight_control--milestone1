@@ -18,6 +18,7 @@ I were test this algorithms with 10 diffrent matrix. the result was:
 
 
 according to the result of the following graphs, a star is the algorithm that return the fastest and the cheapesst way solution. so the program use this algorithm, but it's modifiable.
+
 in addition, i use a cache to store every solution in file database. 
 
 
@@ -40,4 +41,5 @@ Enter "end" when you finished and wait for answer from the server.
 **<u>Authors:</u>**
 
 Maayan Sayah
+
 my github project https://github.com/Maayan-sayah/maayan
