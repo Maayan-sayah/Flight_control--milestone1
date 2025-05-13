@@ -1,4 +1,4 @@
-## ***milestone 2***
+## ***milestone 1***
 
 **<u>Description:</u>**
 In computer science, a search algorithm is any algorithm which is used to search requested information within a data structure. Searching is a basic operation in Software Development and therefor efforts have been made to develop efficient algorithms for this.
